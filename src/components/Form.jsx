@@ -38,7 +38,8 @@ export default function Form(props) {
           {props.formname}
         </label>
         <textarea
-          className="form-control"
+          // eslint-disable-next-line react/prop-types
+          className={`form-control text-${props.mode=="light"?"dark":"light"} bg-${props.mode}  `}
           id="exampleFormControlTextarea1"
           rows="8"
           value={input}
