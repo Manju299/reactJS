@@ -21,10 +21,16 @@ export default function Form(props) {
 
 
     const handleChange = (e)=> {
-        
         setInput(e.target.value)
 
     }
+
+    const copyText = ()=> {
+        let text = document.getElementById("exampleFormControlTextarea1")
+        text.select();
+        navigator.clipboard.writeText(input.value)
+
+  }
   return (
     <>
       <div className="container mb-3">
@@ -40,6 +46,7 @@ export default function Form(props) {
         ></textarea>
         <button className='btn btn-primary my-2' onClick={Uppercase}>Convert to UpperCase</button>
         <button className='btn btn-primary my-2 mx-2' onClick={Lowercase}>Conver to Lowercase</button>
+        <button className='btn btn-primary my-2 ' onClick={copyText}>Copy Text</button>
       </div>
 
       <div className='container'>
@@ -49,7 +56,7 @@ export default function Form(props) {
       <div className='container'>
         <h4>Text Summary</h4>
         <p>{input}</p>
-      </div>
+      </div>    
     </>
   );
 }
