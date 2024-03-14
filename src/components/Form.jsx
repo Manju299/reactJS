@@ -4,12 +4,13 @@ import {useState} from 'react'
 
 
 export default function Form(props) {
-    const [input,setInput] = useState("Enter your text");
+    const [input,setInput] = useState("");
 
 
     const Uppercase = ()=> {
         // let newInput = input.toUpperCase();
         setInput(input.toUpperCase());
+        props.showAlert("Converted to uppercase","success");
     }
 
     
@@ -65,4 +66,5 @@ export default function Form(props) {
 
 Form.propTypes = {
     formname: PropTypes.string,
+    showAlert:PropTypes.string
 }
