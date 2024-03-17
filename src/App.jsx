@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-// import About from './components/About'
+import About from './components/About'
 import Form from './components/Form'
 import Navbar from './components/Navbar'
 import Alert from './components/Alert';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   
@@ -21,8 +22,6 @@ function App() {
     )
 
   }
-    
-  
 
   const toggle = ()=>{
     if(mode=="light"){
@@ -44,11 +43,12 @@ function App() {
     <>
       <Navbar title="TextUtils" about="About Us" mode={mode} toggle={toggle}/>
       <Alert alert={alert}/>
-      <Form formname="Enter you text" mode={mode} showAlert={showAlert}/>
-      {/* <About/> */}
-      
-
-    
+      <Routes>
+        <Route exact path="/" element={<Form formname="Enter you text" mode={mode} showAlert={showAlert}/>}></Route>
+          <Route exact path="/about" element={<About/>} />
+         
+        
+      </Routes>
     </>
   )
 }

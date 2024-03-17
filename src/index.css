@@ -1,0 +1,23 @@
+
+.colorPallet{
+    display: flex;
+
+}
+
+
+
+.colorGreen {
+    border-radius: 50%;
+    background-color: rgb(38, 207, 109);
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+}
+
+.colorBlue {
+    border-radius: 50%;
+    background-color: rgb(12, 1, 67);
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+}

@@ -6,6 +6,7 @@ import {useState} from 'react'
 export default function Form(props) {
     const [input,setInput] = useState("");
 
+  
 
     const Uppercase = ()=> {
         // let newInput = input.toUpperCase();
@@ -13,23 +14,21 @@ export default function Form(props) {
         props.showAlert("Converted to uppercase","success");
     }
 
-    
     const Lowercase = ()=> {
         // let newInput = input.toUpperCase();
         setInput(input.toLowerCase());
+        props.showAlert("Converted to uppercase","success");
     }
-
-
 
     const handleChange = (e)=> {
         setInput(e.target.value)
-
     }
 
     const copyText = ()=> {
         let text = document.getElementById("exampleFormControlTextarea1")
         text.select();
         navigator.clipboard.writeText(input.value)
+        props.showAlert("Converted to uppercase","success");
 
   }
   return (
@@ -53,7 +52,8 @@ export default function Form(props) {
 
       <div className='container'>
         <h3> Word and Character coutn</h3>
-           <p> {input.split(" ").length} words and {input.length} characters</p>
+           <p> 
+            {input.split(" ").length} words and {input.length} characters</p>
       </div>
       <div className='container'>
         <h4>Text Summary</h4>
